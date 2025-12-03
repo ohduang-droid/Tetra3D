@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tetra3D - 3D 俄罗斯方块</title>
+    <style>
+      * { box-sizing: border-box; }
+      body { margin: 0; font-family: 'Segoe UI', system-ui, sans-serif; background: #0b1021; color: #e9ecf2; overflow: hidden; }
+      #app { width: 100vw; height: 100vh; position: relative; }
+      .hud { position: absolute; top: 16px; left: 16px; padding: 12px 16px; background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; backdrop-filter: blur(8px); }
+      .hud h1 { margin: 0 0 8px; font-size: 18px; letter-spacing: 0.5px; }
+      .hud p { margin: 4px 0; font-size: 14px; }
+      .state { position: absolute; top: 16px; right: 16px; padding: 10px 14px; background: rgba(17, 25, 40, 0.7); border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); }
+      .state strong { color: #7ce7a1; }
+      .help { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); padding: 10px 14px; background: rgba(0,0,0,0.35); border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); display: flex; gap: 12px; font-size: 13px; letter-spacing: 0.4px; }
+      .help span { opacity: 0.9; }
+      .center-tip { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0,0,0,0.55); padding: 14px 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.12); text-align: center; pointer-events: none; }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div class="hud">
+        <h1>Tetra3D</h1>
+        <p>分数：<span id="score">0</span></p>
+        <p>行数：<span id="lines">0</span></p>
+      </div>
+      <div class="state">状态：<strong id="state">Start</strong></div>
+      <div class="help">
+        <span>← → 移动</span>
+        <span>↑ 旋转</span>
+        <span>↓ 加速下落</span>
+        <span>P 暂停</span>
+        <span>R 重置</span>
+      </div>
+      <div class="center-tip" id="centerTip">按任意键开始</div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
