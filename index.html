@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tetra3D - 3D 俄罗斯方块</title>
+  <link rel="stylesheet" href="src/styles.css" />
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.164.1/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.164.1/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>Tetra3D</h1>
+      <p>使用鼠标旋转/缩放/平移视角，方向键控制方块（← → 移动，↑ 旋转，↓ 加速下落）。</p>
+    </header>
+    <main>
+      <div id="scene-container"></div>
+      <section id="hud">
+        <div class="scoreboard">
+          <div class="label">分数</div>
+          <div id="score">0</div>
+        </div>
+        <div class="scoreboard">
+          <div class="label">已消行</div>
+          <div id="lines">0</div>
+        </div>
+        <div class="controls">
+          <button id="start">开始</button>
+          <button id="pause">暂停</button>
+          <button id="restart">重新开始</button>
+        </div>
+        <div class="tips">
+          <p>游戏状态：<span id="status">等待开始</span></p>
+          <p>鼠标：旋转/滚轮缩放/Shift+拖动平移</p>
+          <p>键盘：← → 左右移动，↑ 旋转，↓ 加速下落</p>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
